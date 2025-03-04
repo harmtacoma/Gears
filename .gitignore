@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments (common names)
+venv*/
+.env*/
+.venv*/
+env*/
+.conda/
+conda-meta/
+*.egg-info/
+pip-wheel-metadata/
+
+# Visual Studio / VS Code
+.vscode/
+.vs/
+*.code-workspace
+
+# MacOS
+.DS_Store
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# Testing
+.tox/
+.nox/
+.coverage
+htmlcov/
+pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+TestResults/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# MyPy
+.mypy_cache/
+dmypy.json
+dmypy.json.*
+
+# Profiling data
+*.prof
+*.dat
+*.lprof
