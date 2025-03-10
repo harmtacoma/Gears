@@ -30,7 +30,7 @@ jobs:
     - name: Run Pytest
       working-directory: ./Gears
       run: |
-        PYTHONPATH=$(pwd)/Gears pytest tests/
+        export PYTHONPATH=$(pwd) && pytest tests/
 
     - name: Set up SonarCloud
       uses: sonarsource/sonarcloud-github-action@v1
