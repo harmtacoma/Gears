@@ -32,22 +32,8 @@ jobs:
       run: |
         export PYTHONPATH=$(pwd) && pytest tests/
         
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-    
-    - name: Check Java version
-      run: java -version
-        
-    - name: Set up SonarCloud
-      uses: sonarsource/sonarcloud-github-action@v1
-      with:
-        entryPoint: sonar-scanner
-
-    - name: Run SonarCloud analysis
-      working-directory: ./Gears
-      run: sonar-scanner
+    - name: SonarQube Scan
+      uses: SonarSource/sonarqube-scan-action@v4.1.0
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
