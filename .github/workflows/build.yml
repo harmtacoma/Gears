@@ -31,7 +31,7 @@ jobs:
     - name: Run Pytest
       working-directory: ./Gears
       run: |
-        export PYTHONPATH=$(pwd) && pytest --cov=Gears --cov-report=lcov tests/
+        export PYTHONPATH=$(pwd) && pytest --cov=Gears --cov-report=xml tests/
 
     - name: Upload coverage report as artifact
       uses: actions/upload-artifact@v4
@@ -42,6 +42,6 @@ jobs:
     - name: SonarQube Scan
       uses: SonarSource/sonarqube-scan-action@v5
       with:
-        args: -Dsonar.python.coverage.reportPaths=Gears/coverage.lcov
+        args: -Dsonar.python.coverage.reportPaths=Gears/coverage.xml
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
