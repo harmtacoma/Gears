@@ -31,9 +31,11 @@ jobs:
     - name: Run Pytest
       working-directory: ./Gears
       run: |
-        export PYTHONPATH=$(pwd) && pytest tests/
+        export PYTHONPATH=$(pwd) && pytest --cov=./Gears --cov-report=lcov tests/
         
     - name: SonarQube Scan
       uses: SonarSource/sonarqube-scan-action@v5
+      with:
+        args: -Dsonar.python.coverage.reportPaths=coverage.lcov
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
