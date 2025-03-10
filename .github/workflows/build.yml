@@ -37,6 +37,9 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+    
+    - name: Check Java version
+      run: java -version
         
     - name: Set up SonarCloud
       uses: sonarsource/sonarcloud-github-action@v1
