@@ -37,7 +37,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: coverage-report
-        path: ./Gears/coverage.lcov
+        path: ./Gears/coverage.xml
         
     - name: SonarQube Scan
       uses: SonarSource/sonarqube-scan-action@v5
