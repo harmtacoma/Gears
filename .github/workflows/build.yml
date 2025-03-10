@@ -36,12 +36,14 @@ jobs:
     - name: Upload coverage report as artifact
       uses: actions/upload-artifact@v4
       with:
+        working-directory: ./Gears
         name: coverage-report
         path: coverage.lcov
         
     - name: SonarQube Scan
       uses: SonarSource/sonarqube-scan-action@v5
       with:
+        working-directory: ./Gears
         args: -Dsonar.python.coverage.reportPaths=coverage.lcov
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
