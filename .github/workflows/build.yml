@@ -35,8 +35,7 @@ jobs:
     - name: Set up SonarCloud
       uses: sonarsource/sonarcloud-github-action@v1
       with:
-        organization: ${{ secrets.SONAR_ORG }}  # Your SonarCloud organization
-        token: ${{ secrets.SONAR_TOKEN }}  # Your SonarCloud token
+        entryPoint: sonar-scanner
 
     - name: Run SonarCloud analysis
       working-directory: ./Gears
